@@ -17,8 +17,10 @@ def build_model(df):
     )
 
 def save_model_and_embeddings():
-    np.save("lyrics_embeddings_mnet_base.npy", np.vstack(df["embedding"].values))
-    df.to_csv("songs_mnet_base.csv", index=False)
+    np.save("../data/out/lyrics_embeddings_roberta.npy", np.vstack(df["embedding"].values))
+    df.to_csv("../data/out/songs_roberta.csv", index=False)
 
 if __name__ == "__main__":
-    df = pd.read_csv("spotify_dataset.csv")
+    df = pd.read_csv("../data/in/spotify_dataset.csv")
+    build_model(df)
+    save_model_and_embeddings()
