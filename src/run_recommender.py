@@ -6,8 +6,8 @@ import pandas as pd
 import sys
 sys.path.append('..')
 
-df = pd.read_csv("data/in/songs_roberta.csv")
-embeddings = np.load("data/in/lyrics_embeddings_roberta.npy")
+df = pd.read_csv("../data/in/songs_roberta.csv")
+embeddings = np.load("../data/in/lyrics_embeddings_roberta.npy")
 
 def recommend_songs(df, user_query, top_k=10):
     model = SentenceTransformer("sentence-transformers/all-roberta-large-v1")
